@@ -1,0 +1,11 @@
+npm init --yes    -> 
+npm install express --save    -> Instalar un paquete, el(--save) es para guardarlo en las dependencias
+node index.js   -> Arrancar el proyecto node
+npm i -D nodemon    -> Instala nodemon como una dependencia de desarrollo de manera local
+En el archivo package.json, en el grupo de escripts, agregar lo siguiente:
+
+"dev": "nodemon index.js"
+
+Para ejecutarlo, escribir en la terminal:
+
+npm run dev

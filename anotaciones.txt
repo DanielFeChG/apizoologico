@@ -1,4 +1,4 @@
-npm init --yes    -> 
+npm init --yes    -> Inicializar un proyecto de Node
 npm install express --save    -> Instalar un paquete, el(--save) es para guardarlo en las dependencias
 node index.js   -> Arrancar el proyecto node
 
@@ -15,7 +15,6 @@ npm i dotenv --save     -> Para crear variables de entorno personalizadas se ins
 
 se debe crear el archivo llamado ".env" obligatoriamente en la carpeta madre
 
-copiar la Uri de conexion de la DB y pegarlo despues del MONGODB_URI = del .env, luego copiar la contraseña autogenerada del usuario admin en Mongo en la parte de la Uri que dice <db_password> y quitar tambien los "<>"
-
+copiar la Uri de conexion de la DB y pegarlo despues del MONGODB_URI = del .env (no dejar espacio despues del =), luego copiar la contraseña autogenerada del usuario admin en Mongo en la parte de la Uri que dice <db_password> y quitar tambien los "<>"
 
 alt + shift + f para formatear el codigo y quitar caracteres raros de copiar y pegar codigo de otro lados

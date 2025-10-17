@@ -20,3 +20,20 @@ copiar la Uri de conexion de la DB y pegarlo despues del MONGODB_URI = del .env 
 alt + shift + f para formatear el codigo y quitar caracteres raros de copiar y pegar codigo de otro lados
 
 probar API en Postman
+
+
+----------------------------------------------------------------
+Crear usuarios(POST):
+http://localhost:3000/api/signup
+{
+    "usuario":"Daniel",
+    "correo":"daniel@gmail.com",
+    "clave":"12345"
+}
+
+probar login(POST):
+http://localhost:3000/api/login
+{
+    "correo":"daniel@gmail.com",
+    "clave":"12345"
+}

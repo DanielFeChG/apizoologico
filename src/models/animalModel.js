@@ -3,6 +3,7 @@ const animalSchema = mongoose.Schema({
     nombre: {
         type: String,
         required: true,
+        text: true,
     },
     edad: {
         type: Number,
@@ -11,10 +12,11 @@ const animalSchema = mongoose.Schema({
     tipo: {
         type: String,
         required: true,
+        text: true,
     },
     fecha: {
         type: Date,
-        requiered: true,
+        required: true,
     }
 });
 module.exports = mongoose.model("Animal", animalSchema);

@@ -10,14 +10,46 @@ router.post("/animalitos", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+//Consultar animal que en su tipo contenga la palabra 'Zorro'
 router.get("/animals", (req, res) => {
+    animalSchema.find({$text: { $search: "Zorro" } })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+//Consultar animal que tenga nombre Firulais
+router.get("/animals/name", (req, res) => {
+    animalSchema.find({nombre: { $eq: "Firulais" } })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+//Consultar animal que tenga nombre desde la consulta
+router.get("/animals/give-name/:nombre", (req, res) => {
+    const { nombre } = req.params;
+    animalSchema
+        .find({nombre:{$eq:nombre}})
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+//Consultar todos los animales
+router.get("/animals/all", (req, res) => {
     animalSchema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-
 //Consultar un animal por su id
+router.get("/animals/:id", (req, res) => {
+    const { id } = req.params;
+    animalSchema
+        .findById(id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+//Consultar animales repetidos
 router.get("/animals/:id", (req, res) => {
     const { id } = req.params;
     animalSchema

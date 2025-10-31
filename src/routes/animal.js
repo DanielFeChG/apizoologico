@@ -11,7 +11,7 @@ router.post("/animalitos", (req, res) => {
 });
 
 //Consultar animal que en su tipo contenga la palabra 'Zorro'
-router.get("/animals", (req, res) => {
+router.get("/animals/zorro", (req, res) => {
     animalSchema.find({$text: { $search: "Zorro" } })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
@@ -34,7 +34,7 @@ router.get("/animals/give-name/:nombre", (req, res) => {
 });
 
 //Consultar todos los animales
-router.get("/animals/all", (req, res) => {
+router.get("/animals", (req, res) => {
     animalSchema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));

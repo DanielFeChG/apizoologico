@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router(); //manejador de rutas de express
 const animalSchema = require("../models/animalModel");
 //Nuevo animal
-router.post("/animalitos", (req, res) => {
+router.post("/animals/crear", (req, res) => {
     const animal = animalSchema(req.body);
     animal
         .save()
@@ -41,7 +41,7 @@ router.get("/animals", (req, res) => {
 });
 
 //Consultar un animal por su id
-router.get("/animals/:id", (req, res) => {
+router.get("/animals/buscar/:id", (req, res) => {
     const { id } = req.params;
     animalSchema
         .findById(id)
@@ -50,7 +50,7 @@ router.get("/animals/:id", (req, res) => {
 });
 
 //Consultar animales repetidos
-router.get("/animals/:id", (req, res) => {
+router.get("/animals/buscar/:id", (req, res) => {
     const { id } = req.params;
     animalSchema
         .findById(id)
@@ -59,7 +59,7 @@ router.get("/animals/:id", (req, res) => {
 });
 
 //Modificar el nombre de un animal por su id
-router.put("/animals/:id", (req, res) => {
+router.put("/animals/buscar/:id", (req, res) => {
     const { id } = req.params;
     const { nombre, edad, tipo, fecha } = req.body;
     animalSchema
@@ -72,7 +72,7 @@ router.put("/animals/:id", (req, res) => {
 
 //Eliminar un animal por su id
 
-router.delete("/animals/:id", (req, res) => {
+router.delete("/animals/buscar/:id", (req, res) => {
     const { id } = req.params;
     animalSchema
         .findByIdAndDelete(id)
